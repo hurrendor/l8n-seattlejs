@@ -1,0 +1,10 @@
+{
+    "greeting": "Hola!",
+    "greeting_message": "Estas temprano! No hay nada mas aqui sin tu y tu sonrisa mejor",
+    "language": "Idioma",
+    "language_selection": {
+        "english": "Ingles",
+        "Spanish": "Espanol",
+        "Japanese": "Japones"
+    }
+}

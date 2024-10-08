@@ -1,0 +1,17 @@
+{
+    "greeting": "Hello!",
+    "greeting_message": "You're early! There's nothing else here except you and your great smile.",
+    "button_cta": "Click me!",
+    "click_message_zero": "You've clicked this button like {{count}} times.",
+    "click_message_one": "{{count}} click? Is that all you've got?",
+    "click_message_two": "You've clicked this button twice.",
+    "click_message_few": "You've clicked this button like {{count}} times. A few, to say the least.",
+    "click_message_many": "You've clicked this button like {{count}} many times.",
+    "click_message_other": "You've clicked this button like {{count}} times. You must really like this button.",
+    "language": "Language",
+    "language_selection": {
+        "english": "English",
+        "spanish": "Spanish",
+        "japanese": "Japanese"
+    }
+}
