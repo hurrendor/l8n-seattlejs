@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import './../App.css';
+import './App.css';
 import TranslateIcon from '@mui/icons-material/Translate';
 import { Box, Button, Link, Menu, MenuItem, Stack, Typography } from '@mui/material';
 import { format, Locale } from "date-fns";
