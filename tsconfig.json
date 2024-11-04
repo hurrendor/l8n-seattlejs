@@ -25,7 +25,8 @@
         "jsx": "react-jsx",
     },
     "include": [
-        "**.{js,ts,tsx}"
-    ],
+        "end",
+        "start"
+, "index.tsx"    ],
     "exclude": []
 }

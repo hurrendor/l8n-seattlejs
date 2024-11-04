@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import './App.css';
 import TranslateIcon from '@mui/icons-material/Translate';
 import { Box, Button, Link, Menu, MenuItem, Stack, Typography } from '@mui/material';
 import { format, Locale } from "date-fns";
@@ -84,14 +83,14 @@ const App = ():JSX.Element => {
                     onClick={handleClick}>
                     {t('button_cta')}
                 </Button>
-                {(clickCount > 0) && (
+                {/* {(clickCount > 0) && ( */}
                     <Typography variant="caption" sx={{
                         display: 'block',
                         marginTop: '8px'
                     }}>
                         {t('click_message', { count: clickCount })}
                     </Typography>
-                )}
+                {/* )} */}
             </Box>
 
             <Stack direction='row' justifyContent='center'>
