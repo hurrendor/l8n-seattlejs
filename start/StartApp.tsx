@@ -6,19 +6,27 @@ import { format, Locale } from "date-fns";
 import { enUS as en, es, ja } from "date-fns/locale";
 import { useMemo, useState } from 'react';
 
-const App = ():JSX.Element => {
+
+const getUserLangLocale = ((language: string) => {
+    switch (language) {
+        case 'en-US': return en;
+        case 'es': return es;
+        case 'ja': return ja;
+        default: return en
+    }
+})
+
+const StartApp = (): JSX.Element => {
     const { t, i18n } = useTranslation();
 
-    useEffect(() => {
-        i18n.changeLanguage('en-US');
-    }, []);
+    i18n.changeLanguage('en-US');
     const todaysDate = new Date().toString();
+    const [userDate, setUserDate] = useState<string>('');
 
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
 
     const [userLang, setUserLang] = useState<Locale>(en);
-    const [userDate, setUserDate] = useState<string>('');
     const [clickCount, setClickCount] = useState<number>(0);
 
     const handleClick = () => {
@@ -28,14 +36,7 @@ const App = ():JSX.Element => {
         setAnchorEl(event.currentTarget);
     }
 
-    const getUserLangLocale = ((language: string) => {
-        switch (language) {
-            case 'en-US': return en;
-            case 'es': return es;
-            case 'ja': return ja;
-            default: return en
-        }
-    })
+
 
     const handleMenuItemClick = (event: any) => {
         const newLang = event.target.id;
@@ -84,12 +85,12 @@ const App = ():JSX.Element => {
                     onClick={handleClick}>
                     {t('button_cta')}
                 </Button>
-                    <Typography variant="caption" sx={{
-                        display: 'block',
-                        marginTop: '8px'
-                    }}>
-                        {t('button_count_messages.click_message', { count: clickCount })}
-                    </Typography>
+                <Typography variant="caption" sx={{
+                    display: 'block',
+                    marginTop: '8px'
+                }}>
+                    {t('button_count_messages.click_message', { count: clickCount })}
+                </Typography>
             </Box>
 
             <Stack direction='row' justifyContent='center'>
@@ -107,4 +108,4 @@ const App = ():JSX.Element => {
     )
 };
 
-export default App
+export default StartApp
