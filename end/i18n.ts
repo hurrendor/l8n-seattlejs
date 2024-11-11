@@ -6,8 +6,7 @@ i18next
   .use(initReactI18next)
   .use(resourcesToBackend((language: string, namespace: string) => import(`./../locales/${language}/${namespace}.json`)))
   .init({
-    fallbackLng: 'en-US',
-    debug: true,
+    fallbackLng: 'en-US'
   })
 
 export default i18next;

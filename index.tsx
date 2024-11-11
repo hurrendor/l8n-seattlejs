@@ -5,6 +5,7 @@ import i18n from './end/i18n';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import StartApp from './start/StartApp';
 import EndApp from './end/EndApp';
+import ErrorPage from './ErrorPage';
 
 
 const root = ReactDOM.createRoot(
@@ -15,11 +16,13 @@ const router = createBrowserRouter([
         path: "/",
         element: (
             <StartApp />
-        )
+        ),
+        errorElement: (<ErrorPage />)
     },
     {
         path: "end",
-        element: (<EndApp />)
+        element: (<EndApp />),
+        errorElement: (<ErrorPage />)
     }
 ]);
 

@@ -4,11 +4,11 @@
   "button_cta": "انقر هنا!",
   "button_count_messages": {
     "click_message_zero": "You've clicked this button like {{count}} times.",
-    "click_message_one": "{{count}} click? Is that all you've got?",
+    "click_message_one": "One click? Is that all you've got?",
     "click_message_two": "You've clicked this button twice.",
-    "click_message_few": "You've clicked this button like {{count}} times. A /'few/', to say the least.",
-    "click_message_many": "You've clicked this button like {{count}} many times.",
-    "click_message_other": "You've clicked this button like {{count}} times. You must really like this button."
+    "click_message_few": "You've clicked this button like {{count}} times. A 'few' to say the least.",
+    "click_message_many": "You've clicked this button like {{count}} 'many' times.",
+    "click_message_other": "You've clicked this button like {{count}} 'other' times. You must really like this button."
   },
 
   "language": "لغة",

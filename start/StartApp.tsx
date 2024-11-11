@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import TranslateIcon from '@mui/icons-material/Translate';
-import { Box, Button, Link, Menu, MenuItem, Stack, Typography } from '@mui/material';
+import { Box, Button, Link, Menu, MenuItem, MenuList, Stack, Typography } from '@mui/material';
 import { format, Locale } from "date-fns";
 import { enUS as en, es, ja } from "date-fns/locale";
 import { useMemo, useState } from 'react';
 
 
-const getUserLangLocale = ((language: string) => {
+export const getUserLangLocale = ((language: string) => {
     switch (language) {
         case 'en-US': return en;
         case 'es': return es;
@@ -23,8 +23,8 @@ const StartApp = (): JSX.Element => {
     const todaysDate = new Date().toString();
     const [userDate, setUserDate] = useState<string>('');
 
-    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-    const open = Boolean(anchorEl);
+    // const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+    // const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
     const [userLang, setUserLang] = useState<Locale>(en);
     const [clickCount, setClickCount] = useState<number>(0);
@@ -33,16 +33,17 @@ const StartApp = (): JSX.Element => {
         setClickCount(clickCount + 1);
     }
     const handleMenuClick = (event: any) => {
-        setAnchorEl(event.currentTarget);
+        // setIsMenuOpen(prevState => !prevState);
+        // setAnchorEl(event.currentTarget);
     }
 
-
-
     const handleMenuItemClick = (event: any) => {
+        debugger;
         const newLang = event.target.id;
         i18n.changeLanguage(newLang).then();
         setUserLang(getUserLangLocale(newLang));
-        setAnchorEl(null);
+        // setIsMenuOpen(false);
+        // setAnchorEl(null);
     }
 
 
@@ -54,27 +55,24 @@ const StartApp = (): JSX.Element => {
     return (
         <Box sx={{
             padding: 8,
-            width: 900,
-            maxWidth: 1280
+            width: { xs: '90%', lg: 900},
+            // maxWidth: 1280
         }}>
             <Box>
                 <Stack direction='row' sx={{
                     justifyContent: 'space-between'
                 }}>
                     <Typography variant="body1">{userDate}</Typography>
-                    <Button onClick={handleMenuClick}>
+                    {/* <Button onClick={handleMenuClick}>
                         <TranslateIcon />
                         {t('language')}
-                    </Button>
-                    <Menu
-                        open={open}
-                        anchorEl={anchorEl}
-                    >
+                    </Button> */}
+                    <MenuList>
                         <MenuItem onClick={handleMenuItemClick} id='ar'>عربي</MenuItem>
                         <MenuItem onClick={handleMenuItemClick} id='en'>English</MenuItem>
                         <MenuItem onClick={handleMenuItemClick} id='es'>Español</MenuItem>
                         <MenuItem onClick={handleMenuItemClick} id='ja'>日本語</MenuItem>
-                    </Menu>
+                    </MenuList>
                 </Stack>
             </Box>
             <Box>
