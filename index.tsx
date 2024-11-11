@@ -1,10 +1,10 @@
 import ReactDOM from 'react-dom/client';
 import { I18nextProvider } from 'react-i18next';
 import './index.css';
-import i18n from './start/i18n';
+import i18n from './end/i18n';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import StartApp from './start/App';
-import EndApp from './end/App';
+import StartApp from './start/StartApp';
+import EndApp from './end/EndApp';
 
 
 const root = ReactDOM.createRoot(
