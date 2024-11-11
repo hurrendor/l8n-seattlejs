@@ -19,9 +19,7 @@ const getUserLangLocale = ((language: string) => {
 const EndApp = (): JSX.Element => {
     const { t, i18n } = useTranslation();
 
-    // useEffect(() => {
-        i18n.changeLanguage('en-US');
-    // }, []);
+    i18n.changeLanguage('en-US');
     const todaysDate = new Date().toString();
     const [userDate, setUserDate] = useState<string>('');
 
@@ -72,6 +70,7 @@ const EndApp = (): JSX.Element => {
                         open={open}
                         anchorEl={anchorEl}
                     >
+                        <MenuItem onClick={handleMenuItemClick} id='ar'>عربي</MenuItem>
                         <MenuItem onClick={handleMenuItemClick} id='en'>English</MenuItem>
                         <MenuItem onClick={handleMenuItemClick} id='es'>Español</MenuItem>
                         <MenuItem onClick={handleMenuItemClick} id='ja'>日本語</MenuItem>

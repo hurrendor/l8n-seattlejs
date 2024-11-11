@@ -70,6 +70,7 @@ const StartApp = (): JSX.Element => {
                         open={open}
                         anchorEl={anchorEl}
                     >
+                        <MenuItem onClick={handleMenuItemClick} id='ar'>عربي</MenuItem>
                         <MenuItem onClick={handleMenuItemClick} id='en'>English</MenuItem>
                         <MenuItem onClick={handleMenuItemClick} id='es'>Español</MenuItem>
                         <MenuItem onClick={handleMenuItemClick} id='ja'>日本語</MenuItem>
