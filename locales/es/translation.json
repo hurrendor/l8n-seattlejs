@@ -1,5 +1,16 @@
 {
     "greeting": "Hola!",
     "greeting_message": "Estas temprano! No hay nada mas aqui sin tu y tu sonrisa mejor",
-    "language": "Idioma"
+    "button_cta": "¡Haz click en mi!",
+  "button_count_messages": {
+    "click_message_zero": "Has hecho clic en este botón como {{count}} veces.",
+    "click_message_one": "¿{{count}} clic? ¿Eso es todo lo que tienes?",
+    "click_message_two": "Has hecho clic en este botón dos veces.",
+    "click_message_few": "You've clicked this button like {{count}} times. A /'few/', to say the least.",
+    "click_message_many": "You've clicked this button like {{count}} many times.",
+    "click_message_other": "You've clicked this button like {{count}} times. You must really like this button."
+  },
+  "language": "Idioma",
+  "tutorial_link": "Tutorial de traducción",
+  "code_link": "Ver código"
 }

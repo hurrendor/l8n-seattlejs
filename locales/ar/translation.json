@@ -1,6 +1,6 @@
 {
   "greeting": "مرحبًا!",
-  "greeting_message": "You're early! There's nothing else here except you and your great smile.",
+  "greeting_message": "لقد وصلت مبكرًا! لا يوجد شيء آخر هنا سوى أنت وابتسامتك الرائعة.",
   "button_cta": "انقر هنا!",
   "button_count_messages": {
     "click_message_zero": "You've clicked this button like {{count}} times.",
@@ -11,7 +11,7 @@
     "click_message_other": "You've clicked this button like {{count}} times. You must really like this button."
   },
 
-  "language": "Language",
-  "tutorial_link": "Translation tutorial",
-  "code_link": "View code"
+  "language": "لغة",
+  "tutorial_link": "دروس الترجمة",
+  "code_link": "عرض الكود"
 }
