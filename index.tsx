@@ -27,7 +27,9 @@ const router = createBrowserRouter([
 ]);
 
 root.render(
-    <I18nextProvider i18n={i18n} defaultNS={'translation'}>
+    // <I18nextProvider i18n={i18n} defaultNS={'translation'}>
+        <>
         <RouterProvider router={router} />
-    </I18nextProvider>
+        </>
+    // </I18nextProvider>
 );

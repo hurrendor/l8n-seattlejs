@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   display: block;
@@ -7,14 +11,16 @@ body {
 }
 
 #root {
-  margin:0;
+  margin: 0;
   display: block;
   max-width: 1280px;
+  width: 100%;
+  min-height: 100%;
+  height: 100vh;
   padding: 2rem;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  min-height: 100%;
 
   color-scheme: light dark;
   color: #000;
@@ -27,7 +33,6 @@ body {
 
   @media(min-width: 768px) {
     margin: 0 auto;
-
   }
 }
 
@@ -36,6 +41,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -59,9 +65,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #365D7A;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -72,12 +80,13 @@ section {
   padding: 8px 16px;
   margin: 8px 0;
   border-radius: 8px;
-  & > h1 {
+
+  &>h1 {
     font-size: 24px;
     color: #365D7A;
   }
 
-  & > h2 {
+  &>h2 {
     font-size: 18px;
   }
 }
@@ -87,9 +96,11 @@ section {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
