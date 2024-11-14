@@ -13,5 +13,6 @@
 
   "language": "Language",
   "tutorial_link": "Translation tutorial",
-  "code_link": "View source code"
+  "code_link": "View source code",
+  "slides_link": "SeattleJS Slides"
 }

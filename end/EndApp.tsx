@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import TranslateIcon from '@mui/icons-material/Translate';
+import DownloadIcon from '@mui/icons-material/Download';
 import { Box, Button, Link, Menu, MenuItem, Stack, Typography } from '@mui/material';
 import { format, Locale } from "date-fns";
-import { enUS as en, es, ja } from "date-fns/locale";
+import { enUS as en, es, ja, ar } from "date-fns/locale";
 import { useMemo, useState } from 'react';
 import './i18n';
 
@@ -11,9 +12,6 @@ import './i18n';
 const EndApp = (): JSX.Element => {
     const { t, i18n } = useTranslation();
 
-    const changeLanguage = (lng: string) => {
-        i18n.changeLanguage(lng);
-    };
     const todaysDate = new Date().toString();
     const [userDate, setUserDate] = useState<string>('');
 
@@ -30,28 +28,31 @@ const EndApp = (): JSX.Element => {
         setAnchorEl(event.currentTarget);
     }
 
-    const getUserLangLocale = ((language: string) => {
+    const getUserLangLocale = ((language: string): Locale => {
         switch (language) {
             case 'en-US': return en;
             case 'es': return es;
             case 'ja': return ja;
+            case 'ar': return ar;
             default: return en
         }
     })
 
     const handleMenuItemClick = (event: any) => {
-        const newLang = event.target.id;
-        changeLanguage(newLang);
-        setUserLang(newLang);
+        setUserLang(event.target.id);
+        i18n.changeLanguage(event.target.id);
+    }
 
+    useEffect(() => {
         //reset the menu and click count
         setAnchorEl(null);
         setClickCount(0);
-    }
+    })
 
     useMemo(() => {
-        setUserDate(format(todaysDate, 'MMM/dd/yyyy', { locale: getUserLangLocale(userLang) }));
-        changeLanguage(userLang);
+        const localizedDate = format(todaysDate, 'MMM/dd/yyyy', { locale: getUserLangLocale(userLang) });
+        setUserDate(localizedDate);
+        i18n.changeLanguage(userLang);
     }, [userLang])
 
     return (
@@ -74,8 +75,8 @@ const EndApp = (): JSX.Element => {
                         open={open}
                         anchorEl={anchorEl}
                     >
-                        <MenuItem onClick={handleMenuItemClick} id='ar'>عربي</MenuItem>
                         <MenuItem onClick={handleMenuItemClick} id='en'>English</MenuItem>
+                        <MenuItem onClick={handleMenuItemClick} id='ar'>عربي</MenuItem>
                         <MenuItem onClick={handleMenuItemClick} id='es'>Español</MenuItem>
                         <MenuItem onClick={handleMenuItemClick} id='ja'>日本語</MenuItem>
                     </Menu>
@@ -90,7 +91,7 @@ const EndApp = (): JSX.Element => {
                 >{t('greeting_message')}</Typography>
 
                 <Button
-                    variant='outlined'
+                    variant='contained'
                     onClick={handleClick}
                     sx={{
                         marginTop: 2
@@ -107,20 +108,25 @@ const EndApp = (): JSX.Element => {
                 </Typography>
             </Box>
 
-            <Stack direction={{ xs:'column', md:'row' }}
-                justifyContent={{xs:'space-between', md:'space-evenly'}}
+            <Stack direction={{ xs: 'column', md: 'row' }}
+                justifyContent={{ xs: 'space-between', md: 'space-evenly' }}
                 sx={{
                     borderTop: '1px solid #000',
                     textAlign: 'left',
                     maxWidth: { sm: '500px', lg: '900px' },
-                    margin: { md: '32px auto 0'}
+                    margin: { md: '32px auto 0' }
                 }}>
-                <Button variant="outlined" sx={{ marginTop: 2 }}>
+                <Button sx={{ marginTop: 2 }} color={'primary'} startIcon={<DownloadIcon />}>
+                    <Link href="./Translation-Tokens_of_Clarity.pdf" target="_blank" title={t('slides_link')}>
+                        <Typography variant="body1">{t('slides_link')}</Typography>
+                    </Link>
+                </Button>
+                <Button sx={{ marginTop: 2 }} color={'success'}>
                     <Link href="https://medium.com/" target="_blank" title={t('tutorial_link')}>
                         <Typography variant="body1">{t('tutorial_link')}</Typography>
                     </Link>
                 </Button>
-                <Button variant="outlined" sx={{ marginTop: 2 }}>
+                <Button sx={{ marginTop: 2 }} color={'info'}>
                     <Link href="https://github.com/hurrendor/l8n-seattlejs" target="_blank" title={t('code_link')}>
                         <Typography variant="body1">{t('code_link')}</Typography></Link>
                 </Button>
