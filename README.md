@@ -1,4 +1,4 @@
-[Medium Article]()
+[Medium - Tutorial](https://stacy-davis.medium.com/translation-tokens-of-clarity-45823baac081)
 
 ## Getting started
 `yarn install`
