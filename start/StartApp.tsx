@@ -1,25 +1,19 @@
 import TranslateIcon from "@mui/icons-material/Translate";
-import {
-  Box,
-  Button,
-  Link,
-  Menu,
-  MenuItem,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Menu, MenuItem, Stack, Typography } from "@mui/material";
 import { format } from "date-fns";
 import { t } from "i18next";
 import { useMemo, useState } from "react";
+import TutorialFooter from "../TutorialFooter";
+// import { t } from "i18next";
 // import { useTranslation } from "react-i18next";
 // import "./i18n";
 
 const StartApp = (): JSX.Element => {
-//   const { t, i18n } = useTranslation();
+  //   const { t, i18n } = useTranslation();
 
-//   const changeLanguage = (lng: string) => {
-//     i18n.changeLanguage(lng);
-//   };
+  //   const changeLanguage = (lng: string) => {
+  //     i18n.changeLanguage(lng);
+  //   };
   const todaysDate = new Date().toString();
   const [userDate, setUserDate] = useState<string>("");
 
@@ -124,35 +118,7 @@ const StartApp = (): JSX.Element => {
         </Typography>
       </Box>
 
-      <Stack
-        direction={{ xs: "column", md: "row" }}
-        justifyContent={{ xs: "space-between", md: "space-evenly" }}
-        sx={{
-          borderTop: "1px solid #000",
-          textAlign: "left",
-          maxWidth: { sm: "500px", lg: "900px" },
-          margin: { md: "32px auto 0" },
-        }}
-      >
-        <Button variant="outlined" sx={{ marginTop: 2 }}>
-          <Link
-            href="https://stacy-davis.medium.com/translation-tokens-of-clarity-45823baac081"
-            target="_blank"
-            title={t("tutorial_link")}
-          >
-            <Typography variant="body1">{t("tutorial_link")}</Typography>
-          </Link>
-        </Button>
-        <Button variant="outlined" sx={{ marginTop: 2 }}>
-          <Link
-            href="https://github.com/hurrendor/l8n-seattlejs"
-            target="_blank"
-            title={t("code_link")}
-          >
-            <Typography variant="body1">{t("code_link")}</Typography>
-          </Link>
-        </Button>
-      </Stack>
+      <TutorialFooter />
     </Box>
   );
 };
